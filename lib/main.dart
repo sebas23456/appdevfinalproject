@@ -37,27 +37,62 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.all(15.0),
-          child: Text("LOGO", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 14)),
+        Align(
+          alignment: Alignment.center,
+          child: buildImage()
         ),
 
+        Align(
+          alignment: Alignment.centerLeft,
+          child: buildFields(),
+        ),
+
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: buildButton()
+        )
+
+      ],
+    );
+  }
+
+  Widget buildImage() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Image.asset('assets/images/AppDevFinalLogo.jpg', height: 200, width: 400,),
+    );
+  }
+
+  Widget buildFields() {
+    return Column(
+      children: const [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset('assets/images/AppDevFinalLogo.jpg', height: 200, width: 400,),
-        ),
-
-        const Padding(
           padding: EdgeInsets.all(15.0),
           child: Text("User Name:", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 14)),
         ),
 
-        const Padding(
+        Padding(
           padding: EdgeInsets.all(15.0),
           child: Text("Password:", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 14)),
         ),
 
+      ],
+    );
+  }
 
+  Widget buildButton() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text("Next page Yooo", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 14)),
+        ),
+
+        Padding(
+          padding: EdgeInsets.all(15.0),
+          child: Text("Make an account", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 14)),
+        ),
       ],
     );
   }
